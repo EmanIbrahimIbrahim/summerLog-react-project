@@ -3,11 +3,8 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../auth'
 import { toast } from 'react-toastify'
-import dotenv from 'dotenv'
 
 export default function AddPost() {
-  dotenv.config()
-
   const { user, token } = useAuth()
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false)

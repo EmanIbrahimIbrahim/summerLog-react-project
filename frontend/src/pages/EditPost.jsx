@@ -4,17 +4,14 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useAuth } from '../auth'
 import { toast } from 'react-toastify'
 import "../css/loginPage.css"
-import dotenv from 'dotenv'
 
 
 function EditPost() {
-  dotenv.config()
   const { id } = useParams()
   const { user, token } = useAuth()
   const navigate = useNavigate()
-
   const baseURL = import.meta.env.VITE_BACKEND_URL;
-  
+
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [author, setAuthor] = useState(user?.name || '')
