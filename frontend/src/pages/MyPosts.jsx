@@ -9,10 +9,11 @@ import "../css/myPosts.css"
 function MyPosts() {
   const { user, token } = useAuth()
   const [myPosts, setMyPosts] = useState([])
+const baseURL = import.meta.env.VITE_BACKEND_URL;
 
   const fetchPosts = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/posts?userId=${user.id}`, {
+      const res = await axios.get(`${baseURL}/posts?userId=${user.id}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       setMyPosts(res.data)
@@ -37,7 +38,7 @@ function MyPosts() {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:8000/posts/${id}`, {
+        await axios.delete(`${baseURL}/posts/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         })
         setMyPosts(prev => prev.filter(p => p.id !== id))

@@ -14,6 +14,8 @@ export default function AddPost() {
   const [author, setAuthor] = useState(user?.name || '')
   const [imageFile, setImageFile] = useState(null)
 
+  const baseURL = import.meta.env.VITE_BACKEND_URL;
+
   const handleImageUpload = async () => {
     const formData = new FormData()
     formData.append('image', imageFile)
@@ -23,7 +25,7 @@ export default function AddPost() {
       `https://api.imgbb.com/1/upload?key=${apiKey}`,
       formData
     )
-    return response.data.data.url 
+    return response.data.data.url
   }
 
   const handleSubmit = async (e) => {
@@ -39,7 +41,7 @@ export default function AddPost() {
       const imageUrl = await handleImageUpload()
 
       await axios.post(
-        'http://localhost:8000/posts',
+        `${baseURL}/posts`,
         {
           title,
           description,
@@ -81,7 +83,7 @@ export default function AddPost() {
         />
 
         <label className="label">Image</label>
-        <input type="file" accept="image/*" 
+        <input type="file" accept="image/*"
           onChange={(e) => setImageFile(e.target.files[0])} required
           className="input border border-gray-300 focus:outline-none focus:ring-0 focus:border-pink-300" />
 

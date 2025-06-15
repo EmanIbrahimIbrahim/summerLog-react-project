@@ -9,10 +9,10 @@ export default function CommentSection({ postId }) {
   const [text, setText] = useState("");
   const [editingCommentId, setEditingCommentId] = useState(null);
   const [editText, setEditText] = useState("");
-
+  const baseURL = import.meta.env.VITE_BACKEND_URL;
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/comments?postId=${postId}`)
+      .get(`${baseURL}/comments?postId=${postId}`)
       .then((res) => setComments(res.data))
       .catch(() => toast.error("Failed to load comments"));
   }, [postId]);
@@ -30,7 +30,7 @@ export default function CommentSection({ postId }) {
     };
 
     try {
-      const res = await axios.post(`http://localhost:8000/comments`, newComment, {
+      const res = await axios.post(`${baseURL}/comments`, newComment, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setComments((prev) => [...prev, res.data]);
@@ -43,7 +43,7 @@ export default function CommentSection({ postId }) {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/comments/${id}`, {
+      await axios.delete(`${baseURL}/comments/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setComments((prev) => prev.filter((c) => c.id !== id));
@@ -63,7 +63,7 @@ export default function CommentSection({ postId }) {
 
     try {
       const updated = await axios.put(
-        `http://localhost:8000/comments/${id}`,
+        `${baseURL}/comments/${id}`,
         {
           ...comments.find((c) => c.id === id),
           text: editText,
@@ -91,10 +91,10 @@ export default function CommentSection({ postId }) {
         <div key={c.id} className="mb-4 p-4 bg-white rounded-box border border-base-300">
           {editingCommentId === c.id ? (
             <>
-            <textarea placeholder="Info" className="textarea textarea-info"
-             value={editText}
-                onChange={(e) => setEditText(e.target.value)}/>
-             
+              <textarea placeholder="Info" className="textarea textarea-info"
+                value={editText}
+                onChange={(e) => setEditText(e.target.value)} />
+
               <div className="flex gap-2">
                 <button className="btn btn-success btn-sm" onClick={() => handleUpdate(c.id)}>Save</button>
                 <button className="btn btn-ghost btn-sm" onClick={() => setEditingCommentId(null)}>Cancel</button>

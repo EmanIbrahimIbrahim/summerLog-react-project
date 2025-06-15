@@ -62,8 +62,8 @@ Token is saved in localStorage
 Only logged-in users can access posts and add/edit/delete them
 
 ## Deployment
-Frontend: Deployed on Vercel
-Backend: Deployed on Glitch or run locally
+Frontend: Deployed on Vercel https://summer-log-react-project.vercel.app/
+Backend: Deployed on Glitch or run locally   https://polar-opalescent-bulb.glitch.me
 
 ## Notes for Developers
 Make sure db.json contains users, posts, and comments collections

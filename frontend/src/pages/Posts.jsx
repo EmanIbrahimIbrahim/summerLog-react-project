@@ -12,6 +12,7 @@ export default function Posts() {
   const [posts, setPosts] = useState([])
   const [visibleComments, setVisibleComments] = useState({}) // 💡 لتحديد البوستات اللي ظاهر فيها الكومنتات
   const { user, token } = useAuth()
+  const baseURL = import.meta.env.VITE_BACKEND_URL;
 
   const toggleComments = (postId) => {
     setVisibleComments((prev) => ({
@@ -22,7 +23,7 @@ export default function Posts() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get('http://localhost:8000/posts')
+      const res = await axios.get(`${baseURL}/posts`)
       setPosts(res.data)
     }
     fetchPosts()
@@ -32,7 +33,7 @@ export default function Posts() {
 
   useEffect(() => {
     if (location.state?.refresh) {
-      axios.get('http://localhost:8000/posts').then(res => setPosts(res.data))
+      axios.get(`${baseURL}/posts`).then(res => setPosts(res.data))
     }
   }, [location.state])
 
@@ -48,7 +49,7 @@ export default function Posts() {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:8000/posts/${id}`, {
+        await axios.delete(`${baseURL}/posts/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         })
         setPosts(posts.filter(p => p.id !== id))

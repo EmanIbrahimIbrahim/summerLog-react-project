@@ -9,6 +9,7 @@ function EditPost() {
   const { id } = useParams()
   const { user, token } = useAuth()
   const navigate = useNavigate()
+  const baseURL = import.meta.env.VITE_BACKEND_URL;
 
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
@@ -30,7 +31,7 @@ function EditPost() {
   }
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/posts/${id}`)
+    axios.get(`${baseURL}/posts/${id}`)
       .then(res => {
         const post = res.data
         if (post.userId !== user.id) {
@@ -57,7 +58,7 @@ function EditPost() {
         imageUrl = await handleImageUpload()
       }
 
-      await axios.put(`http://localhost:8000/posts/${id}`, {
+      await axios.put(`${baseURL}/posts/${id}`, {
         title,
         description,
         author,
