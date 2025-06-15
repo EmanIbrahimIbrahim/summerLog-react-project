@@ -1,0 +1,26 @@
+.myposts-container{
+    padding: 3em;
+}
+.no-posts {
+  background-image: url("https://media.istockphoto.com/id/2210886794/photo/magnifying-glass-and-alarm-clock-concept-of-finding-time-or-being-on-time.webp?a=1&b=1&s=612x612&w=0&k=20&c=L5GfdM3f5BUAOn3HseHjzmxknFLPc-p2bsuX8OqeO5Q=");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30em;
+  height: 20em;
+  margin: 7em auto;
+}
+.no-posts-add-one {
+  position: relative;
+  width: 50%;
+  top: 37%;
+  left: 50%;
+}
+.no-posts-add-one li{
+    list-style: none;
+    margin-right: 0px !important;
+}
+.no-posts-add-one p{
+    font-family: "Indie Flower", cursive;
+  font-weight: 900;
+  font-style: normal;
+}

@@ -1,0 +1,76 @@
+{
+  "users": [
+    {
+      "email": "eman@gmail.com",
+      "password": "$2a$10$w0AaNk1OcVZVXLkkvx2MKumTIAeHsT7WK7B6Nyx/2DPl3ga7KaHTu",
+      "name": "eman",
+      "id": 1
+    },
+    {
+      "email": "sameh@gmail.com",
+      "password": "$2a$10$rp0CemqycHVkDlTAraJVdeiXQN66xhpLuC.M/9DfV5jQ8Gv4iMFdm",
+      "name": "sameh",
+      "id": 2
+    }
+  ],
+  "posts": [
+    {
+      "title": "post",
+      "description": "plaa",
+      "image": "https://images.unsplash.com/photo-1577695184496-f87ebc9b6072?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3VtbWVyJTIwdmliZXN8ZW58MHx8MHx8fDA%3D",
+      "author": "eman",
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "title": "post",
+      "description": "plaaaaaakkkkkkkkkk",
+      "author": "eman",
+      "image": "https://images.unsplash.com/photo-1599137937219-3abca552b65f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHN1bW1lciUyMHZpYmVzfGVufDB8fDB8fHww",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "title": "post",
+      "description": "llllllllllllllllllllllllllllllll",
+      "author": "eman",
+      "image": "https://images.unsplash.com/photo-1501426026826-31c667bdf23d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3VtbWVyJTIwdmliZXN8ZW58MHx8MHx8fDA%3D",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "title": "post",
+      "description": "plaaaaaaaaaaaaaaa",
+      "author": "eman",
+      "image": "https://images.unsplash.com/photo-1578458329607-534298aebc4d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3VtbWVyJTIwdmliZXN8ZW58MHx8MHx8fDA%3D",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "title": "post",
+      "description": "hiiiiiiiiiiiiiiiiii",
+      "image": "https://i.ibb.co/hFCnwtFz/photo-1473496169904-658ba7c44d8a.jpg",
+      "author": "eman",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "title": "post",
+      "description": "plaaaa",
+      "author": "sameh",
+      "image": "https://i.ibb.co/20wsmV2s/premium-photo-1681582960523-2b5ba7ed2c20.jpg",
+      "userId": 2,
+      "id": 7
+    }
+  ],
+  "comments": [
+    {
+      "postId": 4,
+      "userId": 1,
+      "author": "eman",
+      "text": "ننن",
+      "date": "2025-06-15T06:04:59.805Z",
+      "id": 1
+    }
+  ]
+}

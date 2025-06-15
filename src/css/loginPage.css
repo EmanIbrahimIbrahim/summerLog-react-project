@@ -1,0 +1,76 @@
+.left-section {
+  /* position: relative;
+  z-index: 1; */
+  text-align: center;
+  /* top: 25%; */
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5em;
+  margin: 0px auto;
+}
+.backToWelcomePage{
+     position: absolute;
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+}
+.left-section h2 {
+  color: #ff4465;
+  margin-bottom: 1em;
+}
+fieldset{
+    font-size: 0.6em;
+}
+.login-btn {
+  background-color: #ff4465;
+  border: none;
+  color: white;
+  font-size: 2em;
+}
+.create-account{
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-size: 0.7em;
+    color: darkgray;
+    margin-top: 1em;
+}
+.create-account-link{
+    
+    color: blue;
+}
+.right-section {
+  background-image: url("https://plus.unsplash.com/premium_photo-1663838903315-b2da68faace9?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+.inside-right-section {
+  /* position: relative;
+  z-index: 1; */
+  text-align: center;
+  color: white;
+  /* top: 40%; */
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5em;
+  width: 80%;
+  margin: 0px auto;
+}
+.inside-right-section h2 {
+  color: #ff4465;
+  font-size: 1.7em;
+  margin-bottom: 1em;
+}
+
+/* add post page */
+.addPost-form{
+    
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.8em;
+  margin: 50px auto;
+}

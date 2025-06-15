@@ -1,0 +1,7 @@
+.posts-container{
+    padding: 3em;
+}
+
+body {
+  overflow-y: scroll;
+}
