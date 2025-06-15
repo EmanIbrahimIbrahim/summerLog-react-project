@@ -5,12 +5,14 @@ import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { toast } from 'react-toastify'
 import "../css/myPosts.css"
-
+import dotenv from 'dotenv'
 function MyPosts() {
+  dotenv.config()
+
   const { user, token } = useAuth()
   const [myPosts, setMyPosts] = useState([])
-const baseURL = import.meta.env.VITE_BACKEND_URL;
-
+  const baseURL = import.meta.env.VITE_BACKEND_URL;
+  
   const fetchPosts = async () => {
     try {
       const res = await axios.get(`${baseURL}/posts?userId=${user.id}`, {

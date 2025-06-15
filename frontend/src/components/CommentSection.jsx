@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useAuth } from "../auth";
 import { toast } from "react-toastify";
+import dotenv from 'dotenv'
+
 
 export default function CommentSection({ postId }) {
+  dotenv.config()
   const { user, token } = useAuth();
   const [comments, setComments] = useState([]);
   const [text, setText] = useState("");

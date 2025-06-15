@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
-
+import dotenv from 'dotenv'
 function Signup() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
+  dotenv.config()
   const baseURL = import.meta.env.VITE_BACKEND_URL;
 
   const handleSubmit = async (e) => {

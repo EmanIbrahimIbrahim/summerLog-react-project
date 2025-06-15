@@ -7,13 +7,13 @@ import Swal from 'sweetalert2'
 import { toast } from 'react-toastify'
 import { useLocation } from 'react-router-dom'
 import CommentSection from '../components/CommentSection';
-
+import dotenv from 'dotenv'
 export default function Posts() {
   const [posts, setPosts] = useState([])
   const [visibleComments, setVisibleComments] = useState({}) // 💡 لتحديد البوستات اللي ظاهر فيها الكومنتات
   const { user, token } = useAuth()
   const baseURL = import.meta.env.VITE_BACKEND_URL;
-
+  dotenv.config()
   const toggleComments = (postId) => {
     setVisibleComments((prev) => ({
       ...prev,
@@ -81,6 +81,7 @@ export default function Posts() {
                   className="h-full w-full object-cover"
                 />
               </figure>
+              <h1></h1>
               <div className="card-body p-4 flex flex-col justify-between">
                 <div className='grid gap-3'>
                   <h2 className="card-title text-lg font-semibold">{post.title}</h2>
