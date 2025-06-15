@@ -62,7 +62,7 @@ function Login() {
 
                 <label className="label">Password</label>
                 <input
-                  type="password"
+                  type="password" autocomplete="current-password"
                   className="input w-full border border-gray-300 focus:outline-none focus:ring-0 focus:border-pink-300 mb-4"
                   placeholder="Password"
                   value={password}
